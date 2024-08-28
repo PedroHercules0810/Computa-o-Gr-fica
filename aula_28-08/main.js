@@ -7,12 +7,20 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
-const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+const geometry = new THREE.DodecahedronGeometry( 1, 1 );
 const material = new THREE.MeshBasicMaterial( { color: 0xff005f, wireframe: true } );
 const cube = new THREE.Mesh( geometry, material );
 const cube2 = new THREE.Mesh( geometry, material );
+const cube3 = new THREE.Mesh( geometry, material );
+const cube4 = new THREE.Mesh( geometry, material );
+const cube5 = new THREE.Mesh( geometry, material );
+const cube6 = new THREE.Mesh( geometry, material );
 scene.add( cube );
 scene.add( cube2 );
+scene.add( cube3 );
+scene.add( cube4 );
+scene.add( cube5 );
+scene.add( cube6 );
 
 camera.position.z = 5;
 
@@ -24,7 +32,23 @@ let space = false;
 
 function animate() {
 	renderer.render( scene, camera );
-	cube2.position.z -= .1
+	cube2.position.z -= .5
+	cube3.position.z = -5
+	cube4.position.z = -6
+	cube5.position.z = -7
+	cube6.position.z = -8
+	
+	cube3.position.x = 1
+	cube3.position.y = 2
+	
+	cube4.position.x = -3
+	cube4.position.y = 4
+	
+	cube5.position.x = 5
+	cube5.position.y = -6
+	
+	cube6.position.x = -6
+	cube6.position.y = -6	
 
 	cube2.rotation.x = cube.rotation.x;
 	cube2.rotation.y = cube.rotation.y;
